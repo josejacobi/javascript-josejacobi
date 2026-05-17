@@ -1,0 +1,534 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+main,
+body > header  {    /* Color for the header */
+    background-color: #F4F2ED; 
+}
+
+body > header > ul {   /* Main menu is just a flexbox container */
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 15px 0;
+    max-width: 1440px;
+    border-bottom: 2px solid #CACACA;
+}
+
+body > header > ul > li > a,
+body > header > ul > li{    /* All menu boxes flex at the same rate and initially have the same size */
+    height: 10vh; 
+    min-height: 75px;
+}
+
+body > header > ul > li:first-child > a > img{  /* Scale logo */
+    min-width: 100px;     
+    max-width: min(100%,1440px);
+    height: 100%;
+    object-fit: contain;
+} 
+body > header > ul > li:nth-child(1) > a {
+    flex-shrink: 1;
+}
+
+body > header >  ul > li:nth-child(2)  {  /* Make the search bar twice as long as the other options */
+    flex-grow: 1;
+}
+
+body > header >  ul > li:nth-child(5),
+body > header >  ul > li:nth-child(4),
+body > header >  ul > li:nth-child(3)  {  /* Make the search bar twice as long as the other options */
+    flex: none;
+}
+
+body > header >  ul > li:nth-child(2) > input {  /* Make magnifying glass icon appear inside the input box */
+    border-radius: 10px;
+    border: 2px solid #0A3641;
+    padding: 15px 20px; 
+    background-color: white; 
+    background-image: url('../assets/Iconos/Magnifying Glass Icon.svg');  
+    background-repeat: no-repeat;
+    background-position: 96% 50%;
+    font-size: 0.875rem; 
+    width: 100%; 
+}
+body > header >  ul > li:nth-child(2) > input::placeholder {
+     font-size: 0.75rem;
+}
+
+body > header >  ul > li:nth-child(2) > div {   /* Basic styling for the texts inside the boxes in the main menu */
+    font-size: min(0.875rem,0.9vw);
+    line-height: 130%;
+    font-family: Inter;
+    color: #0a3641;
+    text-align: left;
+}
+body > header >  ul > li:nth-child(3) > div p,
+body > header >  ul > li:nth-child(4) > div p,
+body > header >  ul > li:nth-child(5) > div p{  /* Remove padding and margins from paragraph tags */
+    margin:0;
+    padding: 0;
+}
+body > header > ul > li:nth-child(1) > a,
+body > header > ul > li:nth-child(1),
+body > header > ul > li:nth-child(2){  /* Center and align all icons inside the boxes in the main menu */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+body > header > ul > li:nth-child(2){
+    cursor: pointer;
+} 
+
+body > main > .section:nth-child(9),
+body > header > ul > li:nth-child(5)> div{ /* Position relative is required to make the quantity appear above the shopping cart */
+    position: relative;
+}
+body > header > ul > li:nth-child(5)> div > span{ /* Positions absolutely the quantity "2" above the shopping cart icon */
+    position: absolute;
+    top: -20px; /* Adjust to position vertically */
+    right: 18px; /* Adjust to position horizontally */
+    background-color: red;
+    color: white;
+    font-size: 1rem;
+    padding: 2px 6px;
+    border-radius: 50%; /* Makes it a circle */
+    line-height: 1; /* Ensures text is vertically centered */
+    text-align: center;
+}
+body > footer > ul,
+body > header > nav > ul{   /* The nav bar and the footer are just flexboxes */
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1440px;
+    list-style: none;
+}
+body > footer > ul > li,
+body > header > nav > ul > li{  
+    flex:auto;
+    text-align: center;
+}
+body > header > nav > ul > li > a{   /* Font for the nav bar */
+    font-size: 1.25rem;
+    font-family: Inter;
+    color: #0a3641;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 3;
+    font-weight: bold;
+    display: block;
+}
+body > header > nav > ul > li:hover{   /* Highlight nav bar options */
+    background-color: white;
+}
+
+
+
+@media screen and (max-width: 640px) {  /* styles for mobile devices */
+ 
+    body > header > nav > ul {
+        display: block;
+        border-top: 2px solid #CACACA;
+    }
+    body > footer > ul{
+        display: block;
+    }
+    body > header > nav > ul > li{  
+        text-align: left;
+        padding-left: 1rem;
+    }
+    body > header >  ul > li:nth-child(2) > div p{  
+        display: none;
+    } 
+}
+
+body > header > ul > li:nth-child(2) > div{
+    margin-right: 1rem;
+}
+
+
+main{
+    flex-grow: 1;
+}
+
+
+body > .section:first-of-type,
+body > footer {   /* styles for the footer */
+    background-color: #C7370F;
+}
+header,main,
+body > footer,
+body > main > .section:nth-child(2){
+    max-width: 1440px;
+    width:100%;
+    margin:0 auto;
+}
+
+
+body > footer > ul > li> a {   /* styles for the footer */
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    font-size: 0.75rem;
+    font-family: Inter;
+    color: #fff;
+    line-height: 4;
+}
+
+body > footer > div{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 10px 0;
+    max-width: 1440px;
+    flex-wrap: wrap;
+    border-top: 2px solid #CACACA;
+}
+
+body > footer > div > ul {   /* styles for the social networks */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    list-style: none;
+    padding-left: 40px;
+}
+body > footer > div > ul:last-of-type {   /* styles for the credit cards */
+    justify-content: flex-end;
+    padding-right: 40px;
+}
+
+body > footer > div > img{
+    max-width: min(100%,1440px);
+    height: auto;
+    margin: 0 auto;
+    display:block; 
+    position: relative;
+    margin: 2rem auto;
+    max-height: 300px; 
+}
+
+body > footer > div:first-of-type {
+    background-color: #F4F2ED;
+}
+
+
+body > header > ul > li:nth-child(5) > div > p{
+    margin-right: 5px;
+}
+
+body > main {
+    background-color: white;
+}
+
+table > tbody > tr > td{
+    font-size: min(1.5rem,6vw);
+    line-height: 130%;
+    font-family: Inter;
+    color: #000;
+    text-align: left;
+}
+table > tbody > tr > td:last-child{
+    text-align: right;
+}
+table > tbody > tr:last-of-type > td{
+    font-weight: bold;
+}
+table > tbody > tr > td{
+    height: 1.875rem;
+}
+table > tbody > tr:first-of-type > td{
+    height: 3.75rem;
+}
+table > tbody > tr:nth-child(4) > td:nth-child(1){
+    display: flex;
+    align-items: center;
+}
+
+table > tbody > tr:nth-child(4) > td:nth-child(1) > img{
+    width: auto;
+    max-height: 100%;
+}
+
+table > tbody > tr:nth-child(1) > td:nth-child(2){
+    color:#1077AA;
+}
+
+table > tbody > tr:nth-child(1)  {
+    background-color:#F4F2ED;
+}
+
+table {
+    /* margin:200px auto; */
+    border-collapse: separate;
+    border-spacing: 0px;
+    width: max(340px,30%);
+    /* border:1px solid #F4F2ED;    */
+}
+table > tbody > tr:nth-child(1) > td:nth-child(1){
+    border-top-left-radius: 10px;
+}
+table > tbody > tr:nth-child(1) > td:nth-child(2){
+    border-top-right-radius: 10px;
+}
+table > tbody > tr:nth-child(5) > td:nth-child(1){
+    border-bottom-left-radius: 10px;
+}
+ table > tbody > tr:nth-child(5) > td:nth-child(2){
+    border-bottom-right-radius: 10px;
+}
+table tr td:first-child {
+  border-left: 1px solid #F4F2ED;;
+}
+table tr td:last-child {
+  border-right: 1px solid #F4F2ED;;
+}
+table tr:last-child td {
+  border-bottom: 1px solid #F4F2ED;
+}
+
+
+
+.contact-and-billing,
+.payment {
+    width: 320px;
+    height: 47px;
+    font-size: 2.25rem;
+    line-height: 130%;
+    font-family: Inter;
+    color: #000;
+    text-align: left;
+    display: inline-block;
+}
+
+.line-div {
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #000;
+    box-sizing: border-box;
+}
+.line-div-white {
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid white;
+    box-sizing: border-box;
+}
+
+.Billing_address,
+.use-a-gift,
+.contact-information {
+    font-size: 1.25rem;
+    line-height: 130%;
+    font-family: Inter;
+    color: #000;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    column-gap: 45px;
+    row-gap:2px;
+}
+
+.contact_form{
+    display: flex;
+    flex-direction: column;
+    gap:44px;
+    justify-content: flex-start;
+    margin: 100px auto;
+    width: 80%;
+}
+
+@media screen and (max-width: 780px) {  /* styles for mobile devices */
+    form{
+        grid-template-columns: 1fr; 
+        row-gap: 8px;        
+    }
+     .contact_form{
+        width: 100%;
+        margin: 100px 0;
+    }
+}
+
+.form-group {
+  display: grid;
+  grid-row:span 1;
+}
+.form-group > label{
+    line-height: 130%;
+    font-family: Inter;
+    color: #000;
+    text-align: left;
+    font-size: 0.875rem;
+}
+
+.ApplePay input{
+    margin-top: 1.15rem;
+    background-image: url(../assets/Iconos/circle-dot-solid.svg), url(../assets/Iconos/simple-icons_applepay.svg);  
+    background-repeat: no-repeat, no-repeat;
+    background-position: 3% 50%, 10% 50%; 
+}
+.Cards input{
+    background-image: url(../assets/Iconos/circle-off-icon.svg),url(../assets/Iconos/credit-card-icon.svg) ;  
+    background-repeat: no-repeat, no-repeat;
+    background-position: 3% 50%, 10% 50%; 
+}
+.Klarna input{
+    background-image: url(../assets/Iconos/circle-off-icon.svg), url(../assets/Iconos/klarna_icon.svg);  
+    background-repeat: no-repeat, no-repeat;
+    background-position: 3% 50%, 10% 50%;  
+}
+.PaymentMethods{
+    display:flex;
+    flex-flow: column nowrap;
+    gap:14px;
+    grid-row: span 3;
+}
+
+select,
+input:not([type="checkbox"]){
+    border-radius: 10px;
+    border: 2px solid #0A3641;
+    padding: 15px 20px; 
+    background-color: white; 
+    font-size: 0.875rem; 
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.to-pay-CTA{
+    width: 100%;
+    border-radius: 10px;
+    background-color: #c7370f;
+    border: 1px solid #0a3641;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    gap: 20px;
+    opacity: 0.99;
+    cursor: pointer;
+    text-align: left;
+    font-size: 2rem;
+    color: #fff;
+    font-family: Inter;
+    font-weight: bold;
+    height: 4.5rem;
+    margin-top: 1.1375rem;
+}
+
+div:has(.to-pay-CTA) {
+    grid-row: span 2;
+}
+
+.terms-and-conditions{
+    display:flex;
+    margin-top: 7px;
+}
+.terms-and-conditions > label{
+    font-size: 0.875rem;
+    line-height: 130%;
+    font-family: Inter;
+    color: #000;
+    text-align: left;
+    height: 18px;
+}
+.terms-and-conditions > label > span{
+    text-decoration: underline;
+}
+
+.city_and_state,
+.fullname{
+    display: flex;
+    gap:20px;
+}
+
+.city_and_state div,
+.fullname div{
+    flex-basis: 50%;
+}
+
+label{
+    text-box-trim: trim-both;
+}
+
+.Billing_address{
+    align-self: end;
+    margin-bottom: 14px;
+}
+
+@media screen and (max-width: 780px) {  /* styles for mobile devices */
+     .payment{
+        grid-row: 15;
+    }
+    body > main > .section > div > form > div:nth-child(4){
+        grid-row: 16;
+    }
+    .use-a-gift{
+        grid-row: 17;
+    }
+    body > main > .section > div > form > div:nth-child(8){
+        grid-row: 18; 
+    }
+    .PaymentMethods{
+        grid-row: 19;    
+    }
+    body > main > .section > div > form > div:nth-child(14){
+        grid-row: 20; 
+    }
+}
+
+
+@media screen and (max-width:370px)
+{
+    body > header > ul{
+        gap:0;
+    }
+    table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:335px)
+{
+    .to-pay-CTA,
+    .contact-and-billing,
+    .payment{
+        font-size: 1.5rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+body > footer > div:nth-child(3) > ul:nth-child(1) > li:nth-child(1) > img,
+body > footer > div:nth-child(3) > ul:nth-child(1) > li:nth-child(2) > img,
+body > footer > div:nth-child(3) > ul:nth-child(1) > li:nth-child(3) > img,
+body > footer > div:nth-child(3) > ul:nth-child(1) > li:nth-child(4) > img,
+body > footer > div:nth-child(3) > ul:nth-child(2) > li:nth-child(1) > img,
+body > footer > div:nth-child(3) > ul:nth-child(2) > li:nth-child(2) > img,
+body > footer > div:nth-child(3) > ul:nth-child(2) > li:nth-child(3) > img,
+body > footer > div:nth-child(3) > ul:nth-child(2) > li:nth-child(4) > img{
+    max-width: min(100%,1440px);
+    height: auto;
+    margin: 0 auto;
+    display:block; 
+}
+a{
+    text-decoration: none;
+}

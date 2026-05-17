@@ -1,0 +1,670 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+main,
+body > header  {    /* Color for the header */
+    background-color: #F4F2ED; 
+}
+
+body > header > ul {   /* Main menu is just a flexbox container */
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 15px 0;
+    max-width: 1440px;
+    border-bottom: 2px solid #CACACA;
+}
+
+body > header > ul > li > a,
+body > header > ul > li {   
+    height: 10vh; 
+    min-height: 75px;
+}
+
+body > header > ul > li:first-child > a > img{  /* Scale logo */
+    min-width: 100px;     
+    max-width: min(100%,1440px);
+    height: 100%;
+    object-fit: contain;
+} 
+body > header > ul > li:nth-child(1) > a{
+    flex-shrink: 1;
+}
+ 
+body > header >  ul > li:nth-child(2)  {  /* Make the search bar twice as long as the other options */
+    flex-grow: 1;
+}
+
+/* body > header >  ul > li:nth-child(1), */
+body > header >  ul > li:nth-child(5) > a,
+body > header >  ul > li:nth-child(4),
+body > header >  ul > li:nth-child(3)  {  /* Make the search bar twice as long as the other options */
+    flex: none;
+}
+
+body > header >  ul > li:nth-child(2) > input {  /* Make magnifying glass icon appear inside the input box */
+    border-radius: 10px;
+    border: 2px solid #0A3641;
+    padding: 15px 20px; 
+    background-color: white; 
+    background-image: url('../assets/Iconos/Magnifying Glass Icon.svg');  
+    background-repeat: no-repeat;
+    background-position: 96% 50%;
+    font-size: 0.875rem; 
+    width: 100%; 
+}
+body > header >  ul > li:nth-child(2) > input::placeholder {
+     font-size: 0.75rem;
+}
+body > header >  ul > li:nth-child(3) > div,
+body > header >  ul > li:nth-child(4) > div,
+body > header >  ul > li:nth-child(5) > a > div {   /* Basic styling for the texts inside the boxes in the main menu */
+    font-size: min(0.875rem,0.9vw);
+    line-height: 130%;
+    font-family: Inter;
+    color: #0a3641;
+    text-align: left;
+}
+body > header >  ul > li:nth-child(3) > div p,
+body > header >  ul > li:nth-child(4) > div p,
+body > header >  ul > li:nth-child(5) > a > div p{  /* Remove padding and margins from paragraph tags */
+    margin:0;
+    padding: 0;
+}
+body > header > ul > li:nth-child(1) > a,
+body > header > ul > li:nth-child(1),
+body > header > ul > li:nth-child(2),
+body > header > ul > li:nth-child(3),
+body > header > ul > li:nth-child(4),
+body > header > ul > li:nth-child(5) > a{  /* Center and align all icons inside the boxes in the main menu */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+body > header > ul > li:nth-child(5) > a{  
+    height: 100%;
+}
+
+body > header > ul > li:nth-child(4),
+body > header > ul > li:nth-child(3){
+    cursor: pointer;
+}
+
+body > main > .section:nth-child(9),
+body > header > ul > li:nth-child(5)> a > div{ /* Position relative is required to make the quantity appear above the shopping cart */
+    position: relative;
+}
+body > header > ul > li:nth-child(5)> a > div > span{ /* Positions absolutely the quantity "2" above the shopping cart icon */
+    position: absolute;
+    top: -20px; /* Adjust to position vertically */
+    right: 18px; /* Adjust to position horizontally */
+    background-color: red;
+    color: white;
+    font-size: 1rem;
+    padding: 2px 6px;
+    border-radius: 50%; /* Makes it a circle */
+    line-height: 1; /* Ensures text is vertically centered */
+    text-align: center;
+}
+body > footer > ul,
+body > header > nav > ul{   /* The nav bar and the footer are just flexboxes */
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1440px;
+    list-style: none;
+}
+body > footer > ul > li,
+body > header > nav > ul > li{  
+    flex:auto;
+    text-align: center;
+}
+body > header > nav > ul > li > a{   /* Font for the nav bar */
+    font-size: 1.25rem;
+    font-family: Inter;
+    color: #0a3641;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 3;
+    font-weight: bold;
+    display: block;
+}
+body > header > nav > ul > li:hover{   /* Highlight nav bar options */
+    background-color: white;
+}
+
+header label,
+header input{
+    display: none;
+}
+
+@media screen and (max-width: 800px) {  /* styles for mobile devices */
+
+    header label{
+        display: block;
+    }
+
+    header nav{
+        display: none;
+    }
+
+    #menu-checkbox:checked ~ nav,
+    #menu-checkbox:checked ~ nav > ul {
+        display: block;
+        border-top: 1px solid #CACACA;
+    }
+
+    body > footer > ul{
+        display: block;
+    }
+    body > header > nav > ul > li{  
+        text-align: left;
+        padding-left: 1rem;
+    }
+    
+    body > header >  ul > li:nth-child(3) > div p,
+    body > header >  ul > li:nth-child(4) > div p,
+    body > header >  ul > li:nth-child(5) > a > div p{  
+        display: none;
+    } 
+
+    body > header > ul > li:nth-child(5)> a > div > span{ /* Positions absolutely the quantity "2" above the shopping cart icon for mobile views*/
+        top: -30px; /* Adjust to position vertically */
+        right: 1px; /* Adjust to position horizontally */
+    }
+}
+
+main{
+    flex-grow: 1;
+}
+
+
+body > .section:first-of-type,
+body > footer {   /* styles for the footer */
+    background-color: #C7370F;
+}
+header,main,
+body > footer,
+body > main > .section:nth-child(2){
+    max-width: 1440px;
+    width:100%;
+    margin:0 auto;
+}
+
+
+body > footer > ul > li> a {   /* styles for the footer */
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    font-size: 0.75rem;
+    font-family: Inter;
+    color: #fff;
+    line-height: 4;
+}
+
+body > footer > div{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 10px 0;
+    max-width: 1440px;
+    flex-wrap: wrap;
+    border-top: 2px solid #CACACA;
+}
+
+body > footer > div > ul {   /* styles for the social networks */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    list-style: none;
+    padding-left: 40px;
+}
+body > footer > div > ul:last-of-type {   /* styles for the credit cards */
+    justify-content: flex-end;
+    padding-right: 40px;
+}
+
+body > main > ul,
+body > main > .section:nth-child(7) > ul  {   /* Flexbox container for main*/
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1440px;
+}
+body > main > ul{
+    border-bottom: 2px solid #CACACA;
+}
+
+body > main > ul > li {   /* Main menu is just a flexbox container */
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; 
+    padding: 15px 0;
+    font-size: 2rem;
+    font-family: Inter;
+    font-weight: bold;
+    color: #0a3641;    
+}
+
+
+body > main > .section:first-of-type > span{
+    font-size: min(3vw,2.75rem);   
+    font-family: 'Averia Serif Libre';
+    color: #fff;
+    margin-top: min(1vw,20px);
+    margin-bottom: min(1vw,20px);
+}
+
+body > main > .section:first-of-type {   /* styles for the footer */
+    background-color: #C7370F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+div.elipse{
+    width: 5px;
+    border-radius: 50%;
+    background-color: #c7370f;
+    height: 5px;
+    opacity: 0.5;
+}
+div.texto{
+    font-size: 0.8rem;   
+    font-family: Inter;
+    color: #000;
+}
+
+body > main > .section:nth-child(2) > div{
+    display:  flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:0.2rem;
+    margin-left: 70px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+body > main > .section:nth-child(2) > div > div:nth-child(7){
+    color:rgba(0, 0, 0, 0.4);
+}
+
+body > main > .section:nth-child(2){
+    border: 2px solid #CACACA;
+    box-sizing: border-box;
+}
+
+body > footer > div > img{
+    max-width: min(100%, 1440px);
+    margin: 2rem auto;
+    max-height: 300px;
+    height: auto;
+    display: block;
+}
+body > footer > div:first-of-type {
+    background-color: #F4F2ED;
+}
+
+header{
+    border-bottom: 2px solid #CACACA;;
+}
+
+body > main > .section:nth-child(3) > div:last-child {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1.8rem;
+}
+
+body > main > .section:nth-child(3) > div > span:nth-child(6),
+body > main > .section:nth-child(3) > div > span:nth-child(5),
+body > main > .section:nth-child(3) > div > span:nth-child(4),
+body > main > .section:nth-child(3) > div > span:nth-child(3),
+body > main > .section:nth-child(3) > div > span:nth-child(2),
+body > main > .section:nth-child(3) > div > span:nth-child(1){
+    font-size: 2rem;
+    font-family: Inter;
+    color: #000;
+    white-space: pre-wrap;
+    text-align: left;
+    font-weight: bold;    
+}
+
+body > main > .section:nth-child(3) > div > span:nth-child(4),
+body > main > .section:nth-child(3) > div > span:nth-child(3),
+body > main > .section:nth-child(3) > div > span:nth-child(2){
+    margin: 0;
+}
+
+body > main > .section:nth-child(3) > div> span:nth-child(4) {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+body > main > .section:nth-child(3) > div > span:nth-child(4){
+    border-left: 8px solid black;
+    padding-left: 6px;
+}
+
+body > main > .section:nth-child(3) > div > span:nth-child(6) > img{
+    border: 1px solid black;
+    width: 50px;
+    height: 45px;
+    padding: 1px; 
+    box-sizing: border-box;
+}
+
+body > main > .section:nth-child(3) > div > div:nth-child(7) > .circular_box{
+    
+    border-radius: 100px;
+    background-color: #000;
+    box-sizing: border-box;
+    height: 54px;
+    width: 54px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    font-family: Inter;
+    margin-right: 11px;
+
+}
+
+body > main > .section:nth-child(3) > div > div:nth-child(7) > .transparent_circular_box{
+    
+    border-radius: 100px;
+    box-sizing: border-box;
+    height: 54px;
+    width: 54px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #000;
+    font-family: Inter;
+    margin-right: 11px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+body > main > .section:nth-child(3) > div > span:nth-child(8) > input:first-child{
+
+    border-radius: 10px;
+    background-color: #c7370f;
+    border: 1px solid #0a3641;
+    box-sizing: border-box;
+    padding: 15px 15px;
+    text-align: center;
+    font-size: 2.25rem;
+    color: #fffdfd;
+    font-family: Inter;
+    flex-basis: 318px;
+    margin-right: 27px;
+}
+
+body > main > .section:nth-child(3) > div > span:nth-child(8) > input:nth-child(2){
+    
+    border-radius: 10px;
+    background-color: rgba(199, 55, 15, 0.4);
+    border: 1px solid rgba(10, 54, 65, 1);
+    box-sizing: border-box;
+    padding: 15px 0px;
+    text-align: center;
+    font-size: 2.25rem;
+    color: #fffdfd;
+    font-family: Inter;
+    height: 78px;
+    flex-basis: 101px;
+}
+
+body > main > .section:nth-child(3) > div > span:nth-child(8) {
+    display: flex;
+    align-items: center;
+}
+
+body > main > .section:nth-child(3) > div > ul > li{
+    font-size: 1.5rem;
+    line-height: 130%;
+    font-weight: 500;
+    font-family: Inter;
+    color: #000;
+    text-align: left;
+}
+
+body > main > .section:nth-child(3) > div >  ul > li::before{
+      content: '✓';
+      font-weight: 500;
+}
+
+body > main > .section:nth-child(3) > div > ul{
+    /* padding-left: 0; */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body > main > .section:nth-child(3) > img,
+body > main > .section:nth-child(3) > .details-image-wrapper > img {
+    width:100%;
+    height: auto;
+   
+    object-fit: contain;
+    padding: 0 1.2rem;
+    box-sizing: border-box;
+}
+body > main > .section:nth-child(3) > .details-image-wrapper {
+    position: relative;
+    width: 100%;
+}
+body > main > .section:nth-child(3) > .details-image-wrapper > .favorite-overlay > img {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+body > main > .section:nth-child(3){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: max(2%,2rem);
+}
+
+
+body > main > .section:nth-child(5) 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    padding: 4.4rem 4rem;
+}
+
+@media screen and (max-width: 1300px){
+    body > main > .section:nth-child(3){
+        grid-template-columns: 1fr;
+        row-gap: 4rem;
+    }
+    body > main > .section:nth-child(5) 
+    {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    body > main > .section:nth-child(5) > p{
+        padding: 2.3rem 4.06rem;        
+    }
+}
+@media screen and (min-width: 724px) and (max-width: 1300px) {  
+    body > main > .section:nth-child(3) > img,
+    body > main > .section:nth-child(3) > .details-image-wrapper > img {
+        width:unset;
+    }
+    body > main > .section:nth-child(5) > img
+    {
+        max-width: 585px;
+    }
+}
+.overview-rabot-light-container {
+    width: 100%;
+    font-weight: 500;
+    font-family: Inter;
+    color: #000;
+    text-align: left;
+    display: inline-block;
+    font-size: 2.5rem;
+}
+.overview {
+    margin: 0;
+    line-height: 50px;
+    margin-top: 2rem;
+}
+.rabot-light-3l {
+    margin: 0;
+    font-size: min(4vw, 1.5rem);
+    line-height: 45px;
+}
+
+body > main > .section:nth-child(5) > p
+{
+    font-size: 1.5rem;
+    font-family: 'Averia Serif Libre';
+    color: #c7370f;
+    text-align: left;
+    background-color: white;    
+    margin: 0;
+    line-height: normal;
+    display: flex;
+    align-items: center; /* Vertically centers content */
+    justify-content: center; /* Horizontally centers content (optional) */
+}
+body > main > .section:nth-child(6) > div:last-of-type > img,
+body > main > .section:nth-child(5) > img
+{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.you-may-also {
+     font-size: 2.5rem;
+    font-weight: 600;
+    font-family: Inter;
+    color: #000;
+    text-align: left;
+    margin-left: 2.75rem;
+    padding-top: 2.37rem;
+}
+
+body > main > .section:nth-child(6) > ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(169px,1fr));
+    grid-auto-rows: 1fr;
+    gap: 1rem;
+    margin: 0 2.75rem;
+    padding: 0;
+    max-width: 1440px;
+    margin-bottom: 120px;
+}
+body > main > .section:nth-child(6) > ul > li > a{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; 
+    padding: 15px 0;
+    font-size: 1rem;
+    font-family: Inter;
+}
+body > main > .section:nth-child(6) > ul > li > a > img{
+    height: 248px;
+    width: 169px;
+    flex-shrink: 0;
+    object-fit: cover;
+} 
+
+body > header > ul > li:nth-child(5) > a > div > p{
+    margin-right: 5px;
+}
+
+input[type=button]{
+      cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color:#000;
+}
+
+
+@media screen and (max-width:370px)
+{
+    body > header > ul{
+        gap:0;
+    }
+    
+    body > main > .section:nth-child(5){
+        padding: 0;
+    }
+}
+
+body > footer > div:nth-child(3) > ul:nth-child(1) > li:nth-child(1) > img,
+body > footer > div:nth-child(3) > ul:nth-child(1) > li:nth-child(2) > img,
+body > footer > div:nth-child(3) > ul:nth-child(1) > li:nth-child(3) > img,
+body > footer > div:nth-child(3) > ul:nth-child(1) > li:nth-child(4) > img,
+body > footer > div:nth-child(3) > ul:nth-child(2) > li:nth-child(1) > img,
+body > footer > div:nth-child(3) > ul:nth-child(2) > li:nth-child(2) > img,
+body > footer > div:nth-child(3) > ul:nth-child(2) > li:nth-child(3) > img,
+body > footer > div:nth-child(3) > ul:nth-child(2) > li:nth-child(4) > img{
+    max-width: min(100%,1440px);
+    height: auto;
+    margin: 0 auto;
+    display:block; 
+}
+
+
+.size-option {
+    cursor: pointer;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 6px;
+    user-select: none;
+}
+
+.size-option.selected {
+    border-color: #c7370f;
+    background-color: #c7370f;
+    color: white;
+}
+
+.loader {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  font-size: 4rem;
+  font-family: 'Averia Serif Libre';
+}
+
+.loader.show {
+  display: block;
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta name="description" content="Payment details page for the webshop Rainy Days">
+    <title>Rainy Days - Payment Details</title>
+    <link rel="stylesheet" href="../../styles/styles_for_payment_details.css" >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre&display=swap"
+      rel="stylesheet"
+    >
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li><a href="../../index.html"><img src="../../assets/Logos/RainyDays_Logo.png" alt="Rainy Days Logo" ></a></li>
+        <li onclick="alert('Coming soon...')">
+          <img src="../../assets/Iconos/Login_Icon.svg" alt="Sign in" >
+          <div><p>Sign in</p></div>
+        </li>
+      </ul>
+    </header>
+
+    <main>
+
+        <div class="section">
+
+          <div class="contact_form">
+              <table>
+                <tr>
+                  <td>Order Summary</td>
+                  <td>View Cart</td>
+                </tr>
+                <tr>
+                  <td>Subtotal</td>
+                  <td class="total-sum-number">€399,99</td>
+                </tr>
+                <tr>
+                  <td>Standard shipping</td>
+                  <td>FREE</td>
+                </tr>
+                <tr>
+                  <td><span>Estimated Taxes</span><img src="../../assets/Iconos/question-filled-icon.svg" alt="question icon"></td>
+                  <td>--</td>
+                </tr>
+                <tr>
+                  <td>Order total</td>
+                  <td class="total-sum-number">€399,99</td>
+                </tr>
+              </table>
+              <form >
+                  <div class="contact-and-billing">Contact and Billing</div>
+                  <div class="payment">Payment</div>
+
+                  <div class="line-div"></div>
+                  <div class="line-div"></div>
+
+                  <div class="contact-information">Contact information</div>
+                  <div class="use-a-gift">Use a gift card</div>
+
+                  <div class="line-div-white"></div>
+                  <div class="line-div"></div>
+
+                  <div class="form-group">
+                      <label for="email">Email *</label>
+                      <input type="text" id="email" >
+                  </div>
+                  <div class="PaymentMethods">
+                      <div class="ApplePay"><input type="text" aria-label="Cards payment method"></div>
+                      <div class="Cards"><input type="text" aria-label="Cards payment method"></div>
+                      <div class="Klarna"><input type="text" aria-label="Cards payment method"></div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="phone">Phone number *</label>
+                      <input type="text" id="phone" placeholder="(__) __-____">
+                  </div>
+                  <div class="Billing_address">Billing address</div> 
+
+                  <div class="form-group">
+                      <label for="country">Country *</label>
+                        <select name="country" id="country">
+                          <option value="United States">United States</option>
+                          <option value="Norway">Norway</option>
+                          <option value="Switzerland">Switzerland</option>
+                          <option value="Japan">Japan</option>
+                      </select>
+                  </div>
+                  <div>
+                      <a href="../../checkout/confirmation/index.html">
+                        <div class="to-pay-CTA">
+                            <span>To pay</span>
+                            <span class="total-sum-number">€399,99</span>
+                        </div>
+                      </a>
+                      <div class="terms-and-conditions">
+                          <input type="checkbox" id="accept" name="accept" value="accept"><label for="accept">By placing your order you accept Rainy Days <span>terms</span> and <span>privacy policy</span></label>
+                      </div>                        
+                  </div>
+
+                  <div class="fullname">
+                      <div class="form-group">
+                          <label for="firstname">First name *</label>
+                          <input type="text" id="firstname" >
+                      </div>
+                      <div class="form-group">
+                          <label for="lastname">Last name *</label>
+                          <input type="text" id="lastname" >
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="streetadress">Street address *</label>
+                      <input type="text" id="streetadress" >
+                  </div>
+                  <div></div>
+
+                  <div class="form-group">
+                      <label for="streetadress1">Street address line 2</label>
+                      <input type="text" id="streetadress1" placeholder="Apt.,suite, unit,building, floor, etc..." >
+                  </div>
+                  <div></div>
+
+                  <div class="city_and_state">
+                      <div class="form-group">
+                          <label for="City">City *</label>
+                          <input type="text" id="City" >
+                      </div>
+                      <div class="form-group">
+                      <label for="state">State *</label>
+                          <select name="state" id="state">
+                              <option value="Select">Select</option>
+                              <option value="Big State">Big State</option>
+                              <option value="Beatiful State">Beatiful State</option>
+                              <option value="Funny State">Funny State</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div></div>
+
+                  <div class="postalcode">
+                      <div class="form-group">
+                          <label for="postalcode">Postal code *</label>
+                          <input type="text" id="postalcode" >
+                      </div>
+                      <div class="terms-and-conditions">
+                          <input type="checkbox" id="accept_terms" name="accept" value="accept"><label for="accept_terms">Shipping address is the same as billing</label>
+                      </div>   
+                  </div>
+
+              </form>
+          </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+      <div>
+        <img src="../../assets/Logos/RainyDays_Logo.png" alt="Rainy Days Logo" >
+      </div>
+      <ul>
+        <li><a href="../../terms-and-conditions.html">Terms and Conditions</a></li>
+        <li><a href="../../privacy.html">Privacy Policy</a></li>
+        <li><a href="#">Find a Store</a></li>
+        <li><a href="#">All Clothing</a></li>
+        <li><a href="#">B2B Login</a></li>
+      </ul>
+      <div>
+        <ul>
+          <li>
+            <img src="../../assets/Iconos/social-facebook.svg" alt="Facebook Icon">
+          </li>
+          <li>
+            <img src="../../assets/Iconos/social-instagram.svg" alt="Instagram Icon">
+          </li>
+          <li>
+            <img src="../../assets/Iconos/social-linkedin.svg" alt="Linkedin Icon">
+          </li>
+          <li>
+            <img src="../../assets/Iconos/social-youtube.svg" alt="YouTube Icon">
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <img src="../../assets/Iconos/payment-klarna.svg" alt="Klarna Icon">
+          </li>
+          <li>
+            <img
+              src="../../assets/Iconos/payment-maestro.svg"  alt="Maestro Icon">
+          </li>
+          <li>
+            <img src="../../assets/Iconos/payment-visa.svg" alt="Visa Icon">
+          </li>
+          <li>
+            <img src="../../assets/Iconos/payment-mastercard.svg" alt="Mastercard Icon">
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="../../scripts/payment_page_script.js"></script>
+  </body>
+</html>
+

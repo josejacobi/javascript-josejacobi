@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta name="description" content="Catalog page for the webshop Rainy Days">
+    <title>Rainy Days - List of Products</title>
+    <link rel="stylesheet" href="styles/styles_for_catalog_page.css" >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre&display=swap"
+      rel="stylesheet"
+    >
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li><a href="index.html"><img src="assets/Logos/RainyDays_Logo.png" alt="Rainy Days Logo" ></a></li>
+        <li><input type="text" placeholder="Search for great jackets" ></li>
+        <li onclick="alert('Coming soon...')">
+          <img src="assets/Iconos/Map_Location_Icon.svg" alt="Geo Location Icon">
+          <div>
+            <p>My RaynyDays</p>
+            <p>Find your store</p>
+          </div>
+        </li>
+        <li onclick="alert('Coming soon...')">
+          <img src="assets/Iconos/Login_Icon.svg" alt="Sign in" >
+          <div><p>Sign in</p></div>
+        </li>
+        <li>
+          <a href="checkout/index.html">
+            <img src="assets/Iconos/Cart_Icon.svg" alt="Cart Icon" >
+            <div>
+              <span id="cart-count">0</span>
+              <p>Cart</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <input type="checkbox" name="menu-checkbox" id="menu-checkbox">
+      <label for="menu-checkbox"><img src="assets/Iconos/burger-menu-16x16.png" alt="burger menu icon"> </label>      
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="category/womens-clothing.html">Women</a></li>
+          <li><a href="category/mens-clothing.html">Men</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- main page content -->
+
+      <div class="section">
+        <span>Save up to 20% now on all models from our outlet!</span>
+      </div>
+
+      <div class="section">
+        <div>
+          <div class="texto">Home</div>
+          <div class="elipse"></div>
+          <div class="texto">Everyone</div>
+          <div class="elipse"></div>
+          <div class="texto">Jackets</div>
+        </div>
+
+        <div>
+          <div>Jackets for everyone</div>
+          <div id="product-count">106 Products</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <label for="category-filter">Categories</label>
+        <select id="category-filter" name="category-filter">
+          <option value="all" selected>All</option>
+          <option value="onsale">On Sale</option>
+          <option value="favorites">Favorites</option>
+        </select>
+      </div>
+
+      <div class="section" id="jackets-container">
+          <!-- Placeholder for jackets -->
+      </div>
+      <div id="loader" class="loader hidden">Loading...</div>
+    </main>
+    <footer>
+      <div>
+        <img src="assets/Logos/RainyDays_Logo.png" alt="Rainy Days Logo">
+      </div>
+      <ul>
+        <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="#">Find a Store</a></li>
+        <li><a href="#">All Clothing</a></li>
+        <li><a href="#">B2B Login</a></li>
+      </ul>
+      <div>
+        <ul>
+          <li>
+            <img src="assets/Iconos/social-facebook.svg" alt="Facebook Icon">
+          </li>
+          <li>
+            <img src="assets/Iconos/social-instagram.svg" alt="Instagram Icon">
+          </li>
+          <li>
+            <img src="assets/Iconos/social-linkedin.svg" alt="Linkedin Icon">
+          </li>
+          <li>
+            <img src="assets/Iconos/social-youtube.svg" alt="YouTube Icon" >
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <img src="assets/Iconos/payment-klarna.svg" alt="Klarna Icon" >
+          </li>
+          <li>
+            <img
+              src="assets/Iconos/payment-maestro.svg" alt="Maestro Icon">
+          </li>
+          <li>
+            <img src="assets/Iconos/payment-visa.svg" alt="Visa Icon" >
+          </li>
+          <li>
+            <img src="assets/Iconos/payment-mastercard.svg"  alt="Mastercard Icon">
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="scripts/common_functions.js"></script>
+    <script src="scripts/catalog_page_script.js"></script>
+  </body>
+</html>
+
