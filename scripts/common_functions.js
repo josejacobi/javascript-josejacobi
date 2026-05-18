@@ -91,7 +91,7 @@ function addToCart(id, size) {
 
 function openDetails(id) {
     localStorage.setItem("selectedJacketId", id);
-    window.location.href = "/product/index.html";
+    window.location.href = "product/index.html";
 }
 
 function updateCartCount() {
