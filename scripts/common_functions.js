@@ -134,7 +134,7 @@ function hideLoader() {
 
 async function fetchWithLoader(url, options = {}) {
     const MIN_TIME = 600; // delay in milliseconds to ensure loader is visible
-    const start = performance.now();
+    const start = Date.now();
     showLoader();
 
     try {
@@ -146,7 +146,7 @@ async function fetchWithLoader(url, options = {}) {
 
         const data = await response.json();
 
-        const elapsed = performance.now() - start;
+        const elapsed = Date.now() - start;
         const remaining = MIN_TIME - elapsed;
 
         if (remaining > 0) {
