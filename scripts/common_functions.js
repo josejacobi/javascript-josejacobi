@@ -7,7 +7,7 @@ const RainyDaysUrl = `https://v2.api.noroff.dev/rainy-days?page=${currentPage}&l
 const base = location.hostname === "127.0.0.1" ? "/" : "/javascript-josejacobi/"; 
 
 function createJacketCardHtml(jacket) {
-  const imageUrl = jacket.image?.url || '/assets/Imagenes/jacketimage_1.jpg';
+  const imageUrl = jacket.image?.url;
   const imageAlt = jacket.image?.alt || jacket.title || 'Jacket Image';
   const price = jacket.price.toFixed(2) ;
   const discounted = jacket.discountedPrice.toFixed(2);

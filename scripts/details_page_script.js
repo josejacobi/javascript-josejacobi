@@ -42,13 +42,13 @@ async function GetJacketsByID(jacketId) {
 }
 
 function createDetailsCardHtml(jacket) {
-  const imageUrl = jacket.image?.url || '/assets/Imagenes/jacketimage_3.jpg';
+  const imageUrl = jacket.image?.url ;
   const imageAlt = jacket.image?.alt || jacket.title || 'Jacket Image';
-  const Price = typeof jacket.price === 'number' ? jacket.price : parseFloat(jacket.price) || 0;
-  const discountedPrice = typeof jacket.discountedPrice === 'number' ? jacket.discountedPrice : Price;
+  const Price =  jacket.price;
+  const discountedPrice =  jacket.discountedPrice;
   const color = jacket.baseColor;
   const description = jacket.description;
-  const favoriteIcon = jacket.favorite ? `<img src="/assets/Iconos/icons_heart.svg" alt="heart icon for favorites" style="background-color:#c7370f; border-radius:50%; padding:4px; display:inline-block;" >` : '';  
+  const favoriteIcon = jacket.favorite ? `<img src="${base}assets/Iconos/icons_heart.svg" alt="heart icon for favorites" style="background-color:#c7370f; border-radius:50%; padding:4px; display:inline-block;" >` : '';  
   const gender = jacket.gender == 'Female'  ? 'Women' : 'Men';
   const sizes = Array.isArray(jacket.sizes) ? jacket.sizes : [];
   const sizesHtml = sizes
