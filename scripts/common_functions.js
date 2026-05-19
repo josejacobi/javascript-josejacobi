@@ -57,7 +57,7 @@ function addToShoppingCart(id, size) {
   }
   addToCart(id, size);
   updateCartCount();
-  window.location.href = "/checkout/index.html";
+  window.location.href = "./checkout/index.html";
 }
 
 function addToCart(id, size) {
@@ -91,7 +91,13 @@ function addToCart(id, size) {
 
 function openDetails(id) {
     localStorage.setItem("selectedJacketId", id);
-    window.location.href = "product/index.html";
+
+    const base = location.hostname === "127.0.0.1"
+        ? "/"                       // entorno local
+        : "/javascript-josejacobi/"; // GitHub Pages
+
+    window.location.href = base + "product/index.html";
+
 }
 
 function updateCartCount() {
