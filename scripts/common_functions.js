@@ -4,6 +4,8 @@ const limit = 100;
 
 const RainyDaysUrl = `https://v2.api.noroff.dev/rainy-days?page=${currentPage}&limit=${limit}`;
 
+const base = location.hostname === "127.0.0.1" ? "/" : "/javascript-josejacobi/"; 
+
 function createJacketCardHtml(jacket) {
   const imageUrl = jacket.image?.url || '/assets/Imagenes/jacketimage_1.jpg';
   const imageAlt = jacket.image?.alt || jacket.title || 'Jacket Image';
@@ -57,7 +59,8 @@ function addToShoppingCart(id, size) {
   }
   addToCart(id, size);
   updateCartCount();
-  window.location.href = "./checkout/index.html";
+
+  window.location.href = base + "checkout/index.html";
 }
 
 function addToCart(id, size) {
@@ -91,13 +94,7 @@ function addToCart(id, size) {
 
 function openDetails(id) {
     localStorage.setItem("selectedJacketId", id);
-
-    const base = location.hostname === "127.0.0.1"
-        ? "/"                       // entorno local
-        : "/javascript-josejacobi/"; // GitHub Pages
-
     window.location.href = base + "product/index.html";
-
 }
 
 function updateCartCount() {
