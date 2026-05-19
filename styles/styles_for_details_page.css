@@ -332,7 +332,7 @@ header{
 
 body > main > .section:nth-child(3) > div:last-child {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     row-gap: 1.8rem;
 }
 
@@ -500,7 +500,7 @@ body > main > .section:nth-child(5)
 
 @media screen and (max-width: 1300px){
     body > main > .section:nth-child(3){
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
         row-gap: 4rem;
     }
     body > main > .section:nth-child(5) 
@@ -513,10 +513,10 @@ body > main > .section:nth-child(5)
     }
 }
 @media screen and (min-width: 724px) and (max-width: 1300px) {  
-    body > main > .section:nth-child(3) > img,
+    /* body > main > .section:nth-child(3) > img,
     body > main > .section:nth-child(3) > .details-image-wrapper > img {
         width:unset;
-    }
+    } */
     body > main > .section:nth-child(5) > img
     {
         max-width: 585px;
@@ -667,4 +667,10 @@ body > footer > div:nth-child(3) > ul:nth-child(2) > li:nth-child(4) > img{
 
 .loader.show {
   display: block;
+}
+
+@media screen and  (max-width: 724px) {  
+   body > main > .section:nth-child(3) > div > span:nth-child(8) > input:first-child{
+        font-size: unset;
+    }
 }

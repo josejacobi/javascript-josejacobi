@@ -11,7 +11,7 @@ function createJacketCardHtml(jacket) {
   const imageAlt = jacket.image?.alt || jacket.title || 'Jacket Image';
   const price = jacket.price.toFixed(2) ;
   const discounted = jacket.discountedPrice.toFixed(2);
-  const favoriteIcon = jacket.favorite ? `<img src="/assets/Iconos/favorites_icon.svg" alt="favorite icon" style="display:inline-block; background-color:white; border-radius:50%; padding:4px;" >` : '';
+  const favoriteIcon = jacket.favorite ? `<img src="${base}assets/Iconos/favorites_icon.svg" alt="favorite icon" style="display:inline-block; background-color:white; border-radius:50%; padding:4px;" >` : '';
   const sizesDropdown = `
     <select class="size-selector">
         <option value="">Select size</option>
