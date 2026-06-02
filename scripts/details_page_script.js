@@ -6,7 +6,7 @@ let selectedSize = null;
 async function GetJacketsByID(jacketId) {
     try {
 
-        const RainyDaysByIDUrl = `https://v2.api.noroff.dev/rainy-days/${encodeURIComponent(jacketId)}`;
+        const RainyDaysByIDUrl = `https://v2.api.noroff.dev/rainy-days/${jacketId}`;
 
         const result = await fetchWithLoader(RainyDaysByIDUrl);
 

@@ -4,7 +4,7 @@ function displayCart() {
 
     const container = document.getElementById("wrapperforcart");
 
-    container.innerHTML = ""; // limpiar contenido previo
+    container.innerHTML = ""; 
 
     const titleElement = document.createElement("div");
 

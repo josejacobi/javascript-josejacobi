@@ -1,10 +1,6 @@
+const RainyDaysUrl = `https://v2.api.noroff.dev/rainy-days`;
 
-let currentPage = 1;
-const limit = 100;
-
-const RainyDaysUrl = `https://v2.api.noroff.dev/rainy-days?page=${currentPage}&limit=${limit}`;
-
-const base = location.hostname === "127.0.0.1" ? "/" : "/javascript-josejacobi/"; 
+const base = "/javascript-josejacobi/"; //If you want to run this project locally, just set the variable base to "/". 
 
 function createJacketCardHtml(jacket) {
   const imageUrl = jacket.image?.url;
@@ -136,7 +132,7 @@ function hideLoader() {
 }
 
 async function fetchWithLoader(url, options = {}) {
-    const MIN_TIME = 600; // delay in milliseconds to ensure loader is visible
+    const MIN_TIME = 600; // delay in milliseconds to ensure loader is visible. This is less than a second to avoid unnecessary waiting, but long enough to show the loader for very fast responses.
     const start = Date.now();
     showLoader();
 
